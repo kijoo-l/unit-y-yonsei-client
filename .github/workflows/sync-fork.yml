@@ -17,5 +17,5 @@ jobs:
 
       - name: Push main to fork
         run: |
-          git remote add fork https://x-access-token:${{ secrets.FORK_SYNC_TOKEN }}@github.com/너의깃허브아이디/unity-yonsei-client.git
+          git remote add fork https://x-access-token:${{ secrets.FORK_SYNC_TOKEN }}@github.com/kijoo-1/unity-yonsei-client.git
           git push fork main:main --force
