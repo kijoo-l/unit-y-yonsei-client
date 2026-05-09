@@ -9,7 +9,7 @@ function Home() {
         <div className="flex-1 overflow-y-auto">
 
             <div className="h-[17.5rem] bg-gradient-to-r from-[#1E53FF] to-[#7052FF] text-white p-6 flex flex-col justify-end">
-                <p className="text-[1.75rem] font-extrabold leading-[1.2]">2026 연세대학교 <br/> 대동제</p>
+                <p className="text-display leading-[1.2]">2026 연세대학교 <br/> 대동제</p>
                 <p className="text-[0.875rem] font-regular mt-1">5월 27일 - 5월 29일</p>
 
                 <div className="mt-[1rem] flex items-center gap-[0.25rem]">
@@ -23,10 +23,10 @@ function Home() {
 
                 <section className="px-4 mb-[2.25rem]">
                 <div className="flex justify-between items-center mb-5 mt-5">
-                    <h2 className="font-bold text-[1.25rem] mt-[0.62rem]">현재 진행 중인 공연</h2>
-                    <button className="flex items-center gap-[0.62rem] text-[#1E53FF] text-sm">
+                    <p className="text-heading-2 mt-[0.62rem]">현재 진행 중인 공연</p>
+                    <button className="flex items-center gap-[0.62rem] text-[#1E53FF] text-body-1 mt-[0.62rem]">
                         <Link to="/performance">더보기</Link>
-                        <img src="/home/addition-arrow.svg" alt="" className="w-[0.25rem] h-[0.5rem]"/>
+                        <img src="/home/addition-arrow.svg" alt="" className="w-[0.5rem] h-[0.5rem]"/>
                     </button>
                 </div>
 
@@ -43,8 +43,8 @@ function Home() {
 
                 <section className="px-4">
                 <div className="flex justify-between items-center mb-5">
-                    <h2 className="font-bold text-[1.25rem]">인기 부스</h2>
-                    <button className="flex items-center gap-[0.62rem] text-[#1E53FF] text-sm">
+                    <h2 className="text-heading-2">인기 부스</h2>
+                    <button className="flex items-center gap-[0.62rem] text-[#1E53FF] text-body-1">
                         <Link to="/booth">더보기</Link>
                         <img src="/home/addition-arrow.svg" alt="" className="w-[0.25rem] h-[0.5rem]"/>
                     </button>

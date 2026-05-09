@@ -38,7 +38,7 @@ function BoothCard({
       <div
         className={`flex overflow-hidden bg-white ${
           isTopRank
-            ? "rounded-[0.82rem]"
+            ? "rounded-[0.88rem]"
             : "rounded-[0.88rem]"
         }`}
       >
@@ -46,20 +46,20 @@ function BoothCard({
 
         <div className="flex-1 px-[0.75rem] py-[0.75rem]">
           <div className="flex items-center">
-            <p className="text-[0.9375rem] font-semibold text-[#1F242C]">
+            <p className="text-body-1">
               {title}
             </p>
 
-            <span className="ml-[0.75rem] rounded-full bg-[#E9EEFF] px-[0.5rem] py-[0.06rem] text-[0.6875rem] font-semibold text-[#1E53FF]">
+            <span className="ml-[0.75rem] rounded-full bg-[#E9EEFF] px-[0.5rem] py-[0.06rem] text-label text-[#1E53FF]">
               {location}
             </span>
 
-            <span className="ml-[0.25rem] rounded-full bg-[#FFF8E0] px-[0.5rem] py-[0.06rem] text-[0.6875rem] font-semibold text-[#FFB020]">
+            <span className="ml-[0.25rem] rounded-full bg-[#FFF8E0] px-[0.5rem] py-[0.06rem] text-label text-[#FFB020]">
               {waiting}
             </span>
           </div>
 
-          <p className="mt-[0.25rem] text-[0.75rem] text-[#4A5568]">
+          <p className="mt-[0.25rem] text-caption text-[#4A5568]">
             {department} · 부스 #{boothNumber}
           </p>
 
@@ -67,7 +67,7 @@ function BoothCard({
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full bg-[#EDEEF0] px-[0.5rem] py-[0.125rem] text-[0.6875rem] font-semibold text-[#4A5568]"
+                className="rounded-full bg-[#EDEEF0] px-[0.5rem] py-[0.125rem] text-label text-[#4A5568]"
               >
                 #{tag}
               </span>

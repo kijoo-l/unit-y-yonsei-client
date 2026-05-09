@@ -64,7 +64,7 @@ function BottomNav() {
             />
 
             <span
-              className={`text-[0.6875rem] font-semibold ${
+              className={`text-label ${
                 isActive ? "text-[#1E53FF]" : "text-[#868D9A]"
               }`}
             >

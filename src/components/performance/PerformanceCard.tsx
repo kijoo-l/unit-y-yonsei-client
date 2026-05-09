@@ -39,17 +39,17 @@ function PerformanceCard({
         <div className="flex-1 px-[0.75rem] py-[0.75rem]">
           <div className="flex items-center gap-[0.5rem]">
             {isLive && (
-              <span className="rounded-full bg-[#FF40A5] px-[0.5rem] py-[0.06rem] text-[0.625rem] font-semibold text-white">
+              <span className="rounded-full bg-[#FF40A5] px-[0.5rem] py-[0.06rem] text-label text-white">
                 LIVE
               </span>
             )}
 
-            <p className="text-[0.9375rem] font-semibold">
+            <p className="text-body-1">
               {title}
             </p>
           </div>
 
-          <p className="mt-[0.25rem] text-[0.75rem] text-[#4A5568]">
+          <p className="mt-[0.25rem] text-caption text-[#4A5568]">
             {time} · {location}
           </p>
 
@@ -57,7 +57,7 @@ function PerformanceCard({
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full px-[0.5rem] py-[0.125rem] text-[0.6875rem] font-semibold bg-[#FFECF6] text-[#FF40A5]"
+                className="rounded-full px-[0.5rem] py-[0.125rem] text-label bg-[#FFECF6] text-[#FF40A5]"
               >
                 #{tag}
               </span>
