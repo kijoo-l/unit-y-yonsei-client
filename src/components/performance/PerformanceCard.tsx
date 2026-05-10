@@ -44,7 +44,7 @@ function PerformanceCard({
               </span>
             )}
 
-            <p className="text-body-1 font-semibold">
+            <p className="text-body-1">
               {title}
             </p>
           </div>
@@ -57,7 +57,7 @@ function PerformanceCard({
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full px-[0.5rem] py-[0.125rem] text-label font-semibold bg-[#FFECF6] text-[#FF40A5]"
+                className="rounded-full px-[0.5rem] py-[0.125rem] text-label bg-[#FFECF6] text-[#FF40A5]"
               >
                 #{tag}
               </span>

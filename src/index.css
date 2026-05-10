@@ -25,7 +25,7 @@
 
   --text-body-1: 15px;
   --text-body-1--line-height: 150%;
-  --text-body-1--font-weight: 500;
+  --text-body-1--font-weight: 600;
   --text-body-1--letter-spacing: -0.02em;
 
   --text-body-2: 14px;
@@ -40,11 +40,20 @@
 
   --text-label: 11px;
   --text-label--line-height: 150%;
-  --text-label--font-weight: 500;
+  --text-label--font-weight: 600;
   --text-label--letter-spacing: -0.02em;
 }
 
 body {
   font-family: "SUIT Variable", sans-serif;
   color: #1F242C;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

@@ -47,7 +47,7 @@ function BottomNav() {
   ] as const;
 
   return (
-    <nav className="h-[3.8125rem] border-t border-[#EDEEF0] bg-white flex items-center justify-around">
+    <nav className="h-[5.1875rem] border-t border-[#EDEEF0] bg-white flex items-center justify-around">
       {navItems.map((item) => {
         const isActive = location.pathname === item.path;
 
