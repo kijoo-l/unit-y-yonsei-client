@@ -1,6 +1,59 @@
 @import "tailwindcss";
 
+@theme {
+  --font-suit: "SUIT Variable", sans-serif;
+
+  --text-display: 28px;
+  --text-display--line-height: 120%;
+  --text-display--font-weight: 800;
+  --text-display--letter-spacing: -0.02em;
+
+  --text-heading-1: 24px;
+  --text-heading-1--line-height: 120%;
+  --text-heading-1--font-weight: 700;
+  --text-heading-1--letter-spacing: -0.02em;
+
+  --text-heading-2: 20px;
+  --text-heading-2--line-height: 130%;
+  --text-heading-2--font-weight: 700;
+  --text-heading-2--letter-spacing: -0.02em;
+
+  --text-heading-3: 17px;
+  --text-heading-3--line-height: 130%;
+  --text-heading-3--font-weight: 600;
+  --text-heading-3--letter-spacing: -0.02em;
+
+  --text-body-1: 15px;
+  --text-body-1--line-height: 150%;
+  --text-body-1--font-weight: 600;
+  --text-body-1--letter-spacing: -0.02em;
+
+  --text-body-2: 14px;
+  --text-body-2--line-height: 150%;
+  --text-body-2--font-weight: 400;
+  --text-body-2--letter-spacing: -0.02em;
+
+  --text-caption: 12px;
+  --text-caption--line-height: 150%;
+  --text-caption--font-weight: 400;
+  --text-caption--letter-spacing: -0.02em;
+
+  --text-label: 11px;
+  --text-label--line-height: 150%;
+  --text-label--font-weight: 600;
+  --text-label--letter-spacing: -0.02em;
+}
+
 body {
   font-family: "SUIT Variable", sans-serif;
   color: #1F242C;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

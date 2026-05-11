@@ -2,6 +2,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./index.css";
 import Home from "./pages/HomePage";
 import ReservationBoothListPage from "./pages/booth/reservation/ReservationBoothListPage";
+import { InformationMainPage } from './pages/more/InformationMainPage';
+
 
 function App() {
   return (
@@ -12,7 +14,7 @@ function App() {
             <Route path="/" element={<Navigate to="/home" replace />} />
             <Route path="/home" element={<Home />} />
             <Route path="/reservation" element={<ReservationBoothListPage />} />
-
+            <Route path="/more" element={<InformationMainPage />} />
           </Routes>
         </BrowserRouter>
       </div>
