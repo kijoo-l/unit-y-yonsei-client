@@ -4,7 +4,6 @@ import BoothCard from "../../../components/booth/BoothCard";
 import BottomNav from "../../../components/common/BottomNav";
 import TopBar from "../../../components/common/TopBar";
 import FilterChip from "../../../components/common/FilterChip";
-import TabBar from "../../../components/common/TabBar";
 
 const LOCATIONS = ["전체", "백양로", "한글탑"];
 
@@ -61,38 +60,16 @@ const booths = [
 
 function AvailableBoothListPage() {
   const [selectedLocation, setSelectedLocation] = useState("전체");
-  const [activeTab, setActiveTab] = useState("songdo");
 
   const filteredBooths =
     selectedLocation === "전체"
       ? booths
       : booths.filter((booth) => booth.location === selectedLocation);
 
-  const tabs = [
-    { id: "songdo", label: "5/27 송도" },
-    { id: "sinchon1", label: "5/28 신촌" },
-    { id: "sinchon2", label: "5/29 신촌" },
-    { id: "reservation", label: "내 예약" },
-  ];
-
   return (
     <div className="flex h-screen flex-col bg-white">
       <TopBar title="부스 예약" />
 
-      <div className="px-o">
-          <TabBar
-            tabs={tabs}
-            activeTab={activeTab}
-            onTabChange={setActiveTab}
-          />
-
-          <div>
-            {activeTab === "songdo"}
-            {activeTab === "sinchon1"}
-            {activeTab === "sinchon2"}
-            {activeTab === "reservation"}
-          </div>
-        </div>
       <div className="h-[4.125rem] bg-white px-[1rem] py-[1.25rem]">
         <p className="text-heading-2">예약 가능 부스</p>
       </div>
