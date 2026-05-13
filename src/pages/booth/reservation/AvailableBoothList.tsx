@@ -4,6 +4,7 @@ import BoothCard from "../../../components/booth/BoothCard";
 import BottomNav from "../../../components/common/BottomNav";
 import TopBar from "../../../components/common/TopBar";
 import FilterChip from "../../../components/common/FilterChip";
+import SearchBar from "../../../components/common/SearchBar";
 
 const LOCATIONS = ["전체", "백양로", "한글탑"];
 
@@ -72,6 +73,10 @@ function AvailableBoothListPage() {
 
       <div className="h-[4.125rem] bg-white px-[1rem] py-[1.25rem]">
         <p className="text-heading-2">예약 가능 부스</p>
+      </div>
+
+      <div className="px-[1rem] mb-[1rem]">
+        <SearchBar/>
       </div>
 
       <div className="flex gap-[0.5rem] px-[1rem] mb-[1rem]">
