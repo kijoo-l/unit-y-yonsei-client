@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import BottomNav from "../components/common/BottomNav";
 import BoothCard from "../components/booth/BoothCard";
 import PerformanceCard from "../components/performance/PerformanceCard";
@@ -31,6 +31,7 @@ const booth = [
 ];
 
 function Home() {
+    const navigate = useNavigate();
   return (
     <div className="flex flex-col h-screen bg-gray-50">
         <div className="flex-1 overflow-y-auto scrollbar-hide">
@@ -88,6 +89,7 @@ function Home() {
                             boothNumber={booth.boothNumber}
                             tags={booth.tags}
                             rank={booth.rank}
+                            onClick={() => navigate(`/booths/${booth.boothNumber}`)}
                         />
                     ))}
                 </div>
