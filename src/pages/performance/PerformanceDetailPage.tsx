@@ -112,7 +112,7 @@ function PerformanceDetailPage() {
         <div className="w-full h-[12px] bg-[var(---secondary,#EDEEF0)]"></div>
         <div
           data-속성-1="베리언트2"
-          className="w-96 px-4 py-5 bg-white inline-flex flex-col justify-start items-start gap-3.5"
+          className="w-full px-4 py-5 bg-white inline-flex flex-col justify-start items-start gap-3.5"
         >
           {/* 셋리스트 타이틀 */}
           <div className="justify-start text-heading-3">셋리스트</div>
@@ -129,11 +129,11 @@ function PerformanceDetailPage() {
               return (
                 <div
                   key={index}
-                  className="w-96 px-4 py-3 bg-white rounded-2xl outline outline-1 outline-offset-[-1px] outline-[#EDEEF0] inline-flex justify-start items-center gap-3.5 overflow-hidden"
+                  className="w-full px-4 py-3 bg-white rounded-2xl outline outline-1 outline-offset-[-1px] outline-[#EDEEF0] inline-flex justify-start items-center gap-3.5 overflow-hidden"
                 >
                   {/* 번호 배지 */}
                   <div
-                    className={`size-4 ${bg} rounded-[999px] flex justify-center items-center gap-2.5`}
+                    className={`size-4 ${bg} rounded-full flex justify-center items-center gap-2.5`}
                   >
                     <div
                       className={`text-center justify-start ${text} text-label leading-4`}
@@ -160,9 +160,9 @@ function PerformanceDetailPage() {
         <div className="inline-flex w-full flex-col items-center justify-start gap-4 bg-white px-4">
           {/* 리뷰 카드 (isReviewOpen이 true일 때만 렌더링) */}
           {isReviewOpen && (
-            <div className="flex w-96 overflow-hidden flex-col items-start justify-center gap-4 rounded-2xl bg-white p-6 shadow-[0px_1px_4px_0px_rgba(0,0,0,0.08)] outline outline-1 outline-offset-[-1px] outline-gray-100">
+            <div className="flex w-full overflow-hidden flex-col items-start justify-center gap-4 rounded-2xl bg-white p-6 shadow-[0px_1px_4px_0px_rgba(0,0,0,0.08)] outline outline-1 outline-offset-[-1px] outline-gray-100">
               <div className="flex self-stretch flex-col items-start justify-start gap-3">
-                <div className="flex w-56 flex-col items-start justify-start gap-2">
+                <div className="flex w-full flex-col items-start justify-start gap-2">
                   <div className="line-clamp-1 text-heading-3">
                     💕 공연팀에게 응원 보내기
                   </div>
@@ -248,7 +248,7 @@ function PerformanceDetailPage() {
                 handleSend();
               }
             }}
-            className="inline-flex h-14 w-96 items-center justify-center gap-2 rounded-2xl bg-indigo-500 px-5 py-2 transition-colors hover:bg-indigo-600"
+            className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-2xl bg-indigo-500 px-5 py-2 transition-colors hover:bg-indigo-600"
           >
             <div className="text-center text-heading-3 text-white">
               ♥ 응원메세지 보내기
