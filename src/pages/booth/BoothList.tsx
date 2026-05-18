@@ -5,6 +5,7 @@ import SearchBar from "../../components/common/SearchBar";
 import FilterChip from "../../components/common/FilterChip";
 import BoothCard from "../../components/booth/BoothCard";
 import BottomNav from "../../components/common/BottomNav";
+import MapAccordion from "../../components/common/MapAccordion";
 
 const DATE_TABS = [
   { id: "527", label: "5/27 송도" },
@@ -30,12 +31,6 @@ const LOCATION_CHIPS: Record<string, { id: string; label: string }[]> = {
     { id: "baekyang", label: "백양로" },
     { id: "hangeultap", label: "한글탑" },
   ],
-};
-
-const MAP_IMAGES: Record<string, string> = {
-  "527": "/booth/map-songdo.png",
-  "528": "/booth/map-sinchon.png",
-  "529": "/booth/map-sinchon.png",
 };
 
 const MOCK_BOOTHS = [
@@ -64,13 +59,11 @@ function BoothList() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeFilter, setActiveFilter] = useState("all");
   const [activeLocation, setActiveLocation] = useState("all");
-  const [isMapOpen, setIsMapOpen] = useState(false);
 
   function handleTabChange(tab: string) {
     setActiveTab(tab);
     setActiveLocation("all");
     setActiveFilter("all");
-    setIsMapOpen(false);
   }
 
   const locationChips = LOCATION_CHIPS[activeTab] ?? [];
@@ -97,46 +90,7 @@ function BoothList() {
 
           <SearchBar value={searchQuery} onChange={setSearchQuery} />
 
-          <button
-            type="button"
-            onClick={() => setIsMapOpen((prev) => !prev)}
-            className="flex items-center justify-between w-full rounded-lg border border-[#EDEEF0] bg-white px-4 py-3"
-          >
-            <div className="flex items-center gap-2">
-              <img src="/location.svg" alt="" className="w-4 h-4" />
-              <span className="text-body-2 text-[#4A5568]">부스 안내 지도</span>
-            </div>
-            <img
-              src="/chevron-down.svg"
-              alt=""
-              className={`w-4 h-4 transition-transform duration-200 ${isMapOpen ? "rotate-180" : ""}`}
-            />
-          </button>
-
-          {isMapOpen && (
-            <div className="relative rounded-[14px] border border-[#EDEEF0] h-54 overflow-hidden">
-              <img
-                src={MAP_IMAGES[activeTab]}
-                alt="부스 안내 지도"
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).style.display = "none";
-                }}
-              />
-              <div className="absolute inset-0 bg-[#F7F8FA] flex items-center justify-center -z-10">
-                <span className="text-caption text-[#ACB1BA]">지도 영역</span>
-              </div>
-              <button
-                type="button"
-                aria-label="지도 확대"
-                className="absolute bottom-4.25 right-4.25 w-6 h-6 rounded-sm bg-[rgba(31,36,44,0.5)] flex items-center justify-center"
-              >
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 1H1V5M9 1H13V5M9 13H13V9M1 9V13H5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-            </div>
-          )}
+          <MapAccordion/>
         </div>
 
         <div className="px-5 pt-3 pb-3 flex gap-2">

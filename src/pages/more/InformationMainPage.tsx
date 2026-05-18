@@ -1,4 +1,3 @@
-import React from 'react';
 import { ServiceCard } from '../../components/service/ServiceCard';
 // 💡 팀원분이 만드신 공통 컴포넌트 불러오기 (경로나 이름은 실제 폴더 구조에 맞게 수정해 주세요!)
 import TopBar from '../../components/common/TopBar'; 

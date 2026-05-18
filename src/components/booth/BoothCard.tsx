@@ -54,9 +54,13 @@ function BoothCard({
 
       <div className="flex overflow-hidden bg-white rounded-[0.88rem]">
         <div className="w-20 shrink-0 bg-linear-to-r from-[#E9EEFF] to-[#F1EEFF] flex items-end justify-center overflow-hidden">
-          {imageUrl && (
-            <img src={imageUrl} alt="" className="w-full h-full object-cover" />
-          )}
+          <div className="flex shrink-0 items-end justify-center overflow-hidden bg-linear-to-r from-[#E9EEFF] to-[#F1EEFF]">
+            <img
+              src={imageUrl || "/character/booth-character.svg"}
+              alt=""
+              className="h-[87px] w-[80px] object-contain"
+            />
+          </div>
         </div>
 
         <div className="flex-1 px-3 py-3">

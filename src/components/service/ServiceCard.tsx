@@ -1,4 +1,3 @@
-import React from 'react';
 import chevronRight from '../../../public/svg/Chevron_Right_MD.svg';
 
 interface ServiceCardProps {
