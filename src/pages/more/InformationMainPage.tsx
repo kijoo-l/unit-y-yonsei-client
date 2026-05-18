@@ -1,6 +1,6 @@
+import { useNavigate } from 'react-router-dom';
 import { ServiceCard } from '../../components/service/ServiceCard';
-// 💡 팀원분이 만드신 공통 컴포넌트 불러오기 (경로나 이름은 실제 폴더 구조에 맞게 수정해 주세요!)
-import TopBar from '../../components/common/TopBar'; 
+import TopBar from '../../components/common/TopBar';
 import BottomNav from '../../components/common/BottomNav';
 import chevronRight from '../../../public/svg/Chevron_Right_MD.svg'; // 공지사항 꺾쇠 아이콘
 
@@ -21,6 +21,15 @@ const mockData = {
 };
 
 export const InformationMainPage = () => {
+  const navigate = useNavigate();
+
+  const serviceRoutes: Record<number, string> = {
+    1: '/more/lost-found',
+    2: '/more/barrier-free',
+    3: '/more/review',
+    4: '/more/makers',
+  };
+
   return (
     <div className="flex flex-col min-h-screen ">
       
@@ -84,7 +93,7 @@ export const InformationMainPage = () => {
                 key={service.id}
                 title={service.title}
                 description={service.description}
-                onClick={() => console.log(`${service.title} 페이지로 이동`)}
+                onClick={() => serviceRoutes[service.id] ? navigate(serviceRoutes[service.id]) : undefined}
               />
             ))}
           </div>
