@@ -12,8 +12,6 @@ type LostItem = {
   isNew?: boolean;
 };
 
-const CARD_IMAGE =
-  "https://www.figma.com/api/mcp/asset/fe6377f3-d1fb-4d0c-bade-0ecf313068be";
 
 const LOST_ITEMS: LostItem[] = [
   {
@@ -55,9 +53,9 @@ function LostFoundCard({ item }: { item: LostItem }) {
           }}
         >
           <img
-            src={CARD_IMAGE}
+            src="/character/question-character.svg"
             alt="item"
-            className="max-w-none translate-y-[6px]"
+            className="max-w-none "
             style={{
               width: '136%',
               height: 'auto', 
@@ -73,7 +71,7 @@ function LostFoundCard({ item }: { item: LostItem }) {
           {/* 수정된 부분: 제목과 배지를 한 줄로, 위치를 그 아래로 배치 */}
           <div className="flex flex-col justify-center w-full min-w-0 h-[46px]">
             <div className="flex items-center justify-between w-full gap-2">
-              <p className="text-heading-3 text-[#0D0F12] truncate">
+              <p className="text-body-1 text-[#0D0F12] truncate">
                 {item.title}
               </p>
               {item.isNew ? (
