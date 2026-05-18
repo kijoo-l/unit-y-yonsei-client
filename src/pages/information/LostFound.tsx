@@ -108,11 +108,11 @@ export default function LostFound() {
   );
 
   return (
-    <div className="w-full min-h-screen bg-white relative">
+    <div className="flex flex-col h-screen bg-white">
       <TopBar title="분실물 안내" showBackButton />
 
-      <div className="pb-[5.1875rem]">
-        <div className="px-[1rem] pt-[1rem] pb-[1rem] space-y-[1rem]">
+      <div className="pb-[45px] overflow-y-auto no-scrollbar">
+        <div className="px-[16px] pt-[1rem] pb-[1rem] space-y-[1rem]">
           <section className="rounded-[14px] border border-[#FFB020] bg-[#FFF8E0] p-[1.5rem] shadow-[0px_1px_4px_0px_rgba(0,0,0,0.08)]">
             <div className="flex items-center gap-[0.75rem]">
               
@@ -138,11 +138,11 @@ export default function LostFound() {
               </p>
             </div>
 
-            <div className="mt-[1rem] rounded-[8px] bg-[#EDEEF0] px-[1.25rem] py-[0.875rem] text-heading-3 text-[#0D0F12]">
+            <div className="mt-[12px] rounded-[8px] bg-[#EDEEF0] px-[20px] py-[14px] text-heading-3">
               010-0000-0000
             </div>
 
-            <p className="mt-[1rem] text-body-2 text-[#4A5568]">
+            <p className="mt-[12px] text-body-2 text-[#4A5568]">
               물건을 잃어버리셨나요? 위 번호로 연락주시면 분실물 등록 여부를 확인해드립니다.
             </p>
           </section>
@@ -154,11 +154,11 @@ export default function LostFound() {
           />
 
           <div>
-            <p className="text-caption font-medium text-[#4A5568] px-[1rem] py-[0.625rem]">
+            <p className="text-caption text-[#4A5568]">
               습득 분실물 목록
             </p>
 
-            <div className="space-y-[0.75rem] px-[1rem]">
+            <div className="mt-[8px] gap-[12px] flex flex-col">
               {filteredItems.map((item) => (
                 <LostFoundCard key={item.id} item={item} />
               ))}

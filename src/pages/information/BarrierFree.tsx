@@ -31,24 +31,21 @@ export default function BarrierFree() {
       <TopBar title="배리어프리 안내" showBackButton={true} />
 
       {/* Main Content */}
-      <div className="flex-1 overflow-y-auto pb-[5rem]">
-        <div className="px-[1rem] py-[1rem] space-y-[0.5rem]">
+      <div className="flex-1 overflow-y-auto px-[16px] pb-[5rem]">
+        <div className="py-[1rem]">
           {/* Info Card */}
-          <div className="bg-[#E0FFF3] border border-[#00C070] rounded-[0.875rem] p-[1.5rem] shadow-[0px_1px_4px_0px_rgba(0,0,0,0.08)]">
-            <div className="flex gap-[0.625rem]">
-              <div className="flex-shrink-0 text-[15px] leading-[1.5]">♿</div>
-              <div className="flex-1">
-                <p className="text-body-1 text-[#0D0F12] break-words">
-                  모든 분들이 편안하게 대동제를 즐길 수 있도록 배리어프리 구역과 이동 동선을
-                  안내드립니다.
+          <div className="bg-[#E0FFF3] border border-[#00C070] rounded-[14px] px-[24px] py-[20px] shadow-[0px_1px_4px_0px_rgba(0,0,0,0.08)]">
+            <div className="flex flex-col">
+                <p className="text-body-1 break-words">
+                  ♿ 모든 분들이 편안하게 대동제를 즐길 수 있도록 </p>
+                  <p className="text-body-1 ml-[24px]">배리어프리 구역과 이동 동선을 안내드립니다.
                 </p>
-              </div>
             </div>
           </div>
 
           {/* Map Section */}
-          <div className="pt-[0.5rem]">
-            <p className="text-caption text-[#4A5568] px-[1rem] py-[0.625rem]">
+          <div className="mt-[8px]">
+            <p className="text-caption text-[#4A5568] py-[10px]">
               안내 지도
             </p>
             {/* relative 속성을 추가하여 내부 absolute 요소들의 기준점이 되도록 설정 */}
@@ -74,7 +71,7 @@ export default function BarrierFree() {
                 onClick={() => setIsOpen(true)}
                 className="absolute bottom-[1rem] right-[1rem] bg-black/40 p-[0.375rem] rounded-[0.375rem] cursor-pointer hover:bg-black/50 transition-colors z-10"
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M15 3h6v6" />
                   <path d="M9 21H3v-6" />
                   <path d="M21 3l-7 7" />
@@ -85,8 +82,8 @@ export default function BarrierFree() {
           </div>
 
           {/* Facilities Section */}
-          <div className="pt-[0.5rem]">
-            <p className="text-caption text-[#4A5568] px-[1rem] py-[0.625rem]">
+          <div className="pt-[8px]">
+            <p className="text-caption text-[#4A5568] py-[10px]">
               배리어프리 시설
             </p>
             <div className="bg-white space-y-0">
@@ -94,10 +91,10 @@ export default function BarrierFree() {
                 <div
                   key={index}
                   // 2. 마지막 인덱스 검사 조건을 지우고 모든 항목에 border-b가 생기도록 수정
-                  className="px-[1rem] py-[0.875rem] flex flex-col gap-[0.25rem] border-b border-[#EDEEF0]"
+                  className="px-[6px] py-[10px] flex flex-col gap-[0.25rem] border-b border-[#EDEEF0]"
                 >
                   <div className="flex items-center gap-[0.25rem]">
-                    <span className="text-[1.0625rem]">{facility.icon}</span>
+                    <span>{facility.icon}</span>
                     <p className="text-heading-3 text-[#0D0F12]">
                       {facility.title}
                     </p>
