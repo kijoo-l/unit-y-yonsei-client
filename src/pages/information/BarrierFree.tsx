@@ -4,7 +4,6 @@ import TopBar from "../../components/common/TopBar";
 import BottomNav from "../../components/common/BottomNav";
 import mapImage from "../../assets/map2.png";
 
-
 export default function BarrierFree() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -39,7 +38,7 @@ export default function BarrierFree() {
             <div className="flex gap-[0.625rem]">
               <div className="flex-shrink-0 text-[15px] leading-[1.5]">♿</div>
               <div className="flex-1">
-                <p className="typography-body-1 text-[#0D0F12] break-words">
+                <p className="text-body-1 text-[#0D0F12] break-words">
                   모든 분들이 편안하게 대동제를 즐길 수 있도록 배리어프리 구역과 이동 동선을
                   안내드립니다.
                 </p>
@@ -49,60 +48,61 @@ export default function BarrierFree() {
 
           {/* Map Section */}
           <div className="pt-[0.5rem]">
-            <p className="typography-caption text-[#4A5568] px-[1rem] py-[0.625rem]">
+            <p className="text-caption text-[#4A5568] px-[1rem] py-[0.625rem]">
               안내 지도
             </p>
-            <div className="bg-white border border-[#EDEEF0] rounded-[0.875rem] overflow-hidden">
-                <div className="bg-[#E8E8E8] aspect-video flex items-center justify-center relative">
-                  
-                                    <img
-                    src={mapImage}
-                    alt="배리어프리 안내 지도"
-                    className="w-full h-full object-cover cursor-zoom-in"
-                    onClick={() => setIsOpen(true)}
-                  />
-
-                  {/* 확대 버튼 */}
-                  <button
-                    aria-label="지도 확대"
-                    onClick={() => setIsOpen(true)}
-                    className="absolute bottom-[0.5rem] right-[0.5rem] bg-black/40 p-[0.375rem] rounded-[0.375rem] cursor-pointer hover:bg-black/50 transition-colors"
-                  >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M15 3h6v6" />
-                      <path d="M9 21H3v-6" />
-                      <path d="M21 3l-7 7" />
-                      <path d="M3 21l7-7" />
-                    </svg>
-                  </button>
-                </div>
-              <div className="flex items-center gap-[0.375rem] px-[1rem] py-[0.875rem]">
-                <div className="bg-[#FF5A36] w-[1.5rem] h-[0.5rem] rounded-full" />
-                <p className="typography-caption text-[#0D0F12] font-regular">경사로</p>
+            {/* relative 속성을 추가하여 내부 absolute 요소들의 기준점이 되도록 설정 */}
+            <div className="bg-white border border-[#EDEEF0] rounded-[0.875rem] overflow-hidden relative">
+              <div className="bg-[#E8E8E8] aspect-video flex items-center justify-center w-full h-full">
+                <img
+                  src={mapImage}
+                  alt="배리어프리 안내 지도"
+                  className="w-full h-full object-cover cursor-zoom-in"
+                  onClick={() => setIsOpen(true)}
+                />
               </div>
+
+              {/* 1. 경사로 범례를 지도 안쪽(왼쪽 아래)으로 absolute 배치 */}
+              <div className="absolute bottom-[1rem] left-[1rem] flex items-center gap-[0.375rem] z-10">
+                <div className="bg-[#FF5A36] w-[1.5rem] h-[0.5rem] rounded-full" />
+                <p className="text-caption text-[#0D0F12] font-regular">경사로</p>
+              </div>
+
+              {/* 확대 버튼 */}
+              <button
+                aria-label="지도 확대"
+                onClick={() => setIsOpen(true)}
+                className="absolute bottom-[1rem] right-[1rem] bg-black/40 p-[0.375rem] rounded-[0.375rem] cursor-pointer hover:bg-black/50 transition-colors z-10"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M15 3h6v6" />
+                  <path d="M9 21H3v-6" />
+                  <path d="M21 3l-7 7" />
+                  <path d="M3 21l7-7" />
+                </svg>
+              </button>
             </div>
           </div>
 
           {/* Facilities Section */}
           <div className="pt-[0.5rem]">
-            <p className="typography-caption text-[#4A5568] px-[1rem] py-[0.625rem]">
+            <p className="text-caption text-[#4A5568] px-[1rem] py-[0.625rem]">
               배리어프리 시설
             </p>
             <div className="bg-white space-y-0">
               {facilities.map((facility, index) => (
                 <div
                   key={index}
-                  className={`px-[1rem] py-[0.875rem] flex flex-col gap-[0.25rem] ${
-                    index < facilities.length - 1 ? "border-b border-[#EDEEF0]" : ""
-                  }`}
+                  // 2. 마지막 인덱스 검사 조건을 지우고 모든 항목에 border-b가 생기도록 수정
+                  className="px-[1rem] py-[0.875rem] flex flex-col gap-[0.25rem] border-b border-[#EDEEF0]"
                 >
                   <div className="flex items-center gap-[0.25rem]">
                     <span className="text-[1.0625rem]">{facility.icon}</span>
-                    <p className="typography-heading-3 text-[#0D0F12]">
+                    <p className="text-heading-3 text-[#0D0F12]">
                       {facility.title}
                     </p>
                   </div>
-                  <p className="typography-body-2 text-[#4A5568] font-regular">
+                  <p className="text-body-2 text-[#4A5568] font-regular">
                     {facility.description}
                   </p>
                 </div>
@@ -138,7 +138,6 @@ export default function BarrierFree() {
           </button>
           
           <div className="w-full h-full p-4 flex items-center justify-center">
-            {/* 🌟 수정된 부분: 모달 내부의 확대된 이미지 src도 mapImage를 사용합니다. */}
             <img
               src={mapImage}
               alt="배리어프리 안내 지도 확대"

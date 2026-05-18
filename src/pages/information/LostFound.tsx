@@ -49,7 +49,7 @@ function LostFoundCard({ item }: { item: LostItem }) {
       <div className="flex items-center">
         
         <div
-          className="relative h-[96px] w-[80px] shrink-0 rounded-[14px] overflow-hidden flex items-center justify-center"
+          className="relative h-[96px] w-[80px] shrink-0 rounded-l-[14px] overflow-hidden flex items-center justify-center"
           style={{
             background: 'linear-gradient(129.80557109226518deg, rgb(233, 238, 255) 0%, rgb(241, 238, 255) 100%)',
           }}
@@ -68,24 +68,26 @@ function LostFoundCard({ item }: { item: LostItem }) {
         </div>
         {/* ------------------------- */}
 
-        <div className="flex flex-1 flex-col gap-[8px] h-full items-start justify-center p-[12px]">
-          <div className="flex items-center justify-between w-full h-[46px]">
-            <div className="min-w-0">
-              <p className="typography-heading-3 text-[#0D0F12] truncate">
+        <div className="flex flex-1 flex-col gap-[8px] h-full items-start justify-center p-[12px] min-w-0">
+          
+          {/* 수정된 부분: 제목과 배지를 한 줄로, 위치를 그 아래로 배치 */}
+          <div className="flex flex-col justify-center w-full min-w-0 h-[46px]">
+            <div className="flex items-center justify-between w-full gap-2">
+              <p className="text-heading-3 text-[#0D0F12] truncate">
                 {item.title}
               </p>
-              <p className="mt-[0.25rem] typography-body-2 text-[#4A5568] truncate">
-                {item.location}
-              </p>
+              {item.isNew ? (
+                <span className="shrink-0 rounded-full bg-[#E9EEFF] px-[8px] py-px text-label text-[#1E53FF]">
+                  New
+                </span>
+              ) : null}
             </div>
-            {item.isNew ? (
-              <span className="rounded-full bg-[#E9EEFF] px-[8px] py-px typography-label text-[#1E53FF]">
-                New
-              </span>
-            ) : null}
+            <p className="mt-[0.25rem] text-body-2 text-[#4A5568] truncate">
+              {item.location}
+            </p>
           </div>
-
-          <div className="rounded-full bg-[#EDEEF0] px-[8px] py-px typography-label text-[#4A5568]">
+          
+          <div className="rounded-full bg-[#EDEEF0] px-[8px] py-px text-label text-[#4A5568]">
             {item.timestamp}
           </div>
         </div>
@@ -115,19 +117,34 @@ export default function LostFound() {
         <div className="px-[1rem] pt-[1rem] pb-[1rem] space-y-[1rem]">
           <section className="rounded-[14px] border border-[#FFB020] bg-[#FFF8E0] p-[1.5rem] shadow-[0px_1px_4px_0px_rgba(0,0,0,0.08)]">
             <div className="flex items-center gap-[0.75rem]">
+              
               <div className="flex h-[2rem] w-[2rem] items-center justify-center rounded-[0.75rem] bg-[#FFF3D3]">
-                <span className="text-[1rem]">📞</span>
+                <svg 
+                  width="16" 
+                  height="16" 
+                  viewBox="0 0 24 24" 
+                  fill="currentColor" 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  className="text-[#1F242C]"
+                >
+                  <path 
+                    fillRule="evenodd" 
+                    clipRule="evenodd" 
+                    d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" 
+                  />
+                </svg>
               </div>
-              <p className="typography-heading-3 text-[#1F242C]">
+
+              <p className="text-heading-3 text-[#1F242C]">
                 총학생회 분실물 센터
               </p>
             </div>
 
-            <div className="mt-[1rem] rounded-[8px] bg-[#EDEEF0] px-[1.25rem] py-[0.875rem] typography-heading-3 text-[#0D0F12]">
+            <div className="mt-[1rem] rounded-[8px] bg-[#EDEEF0] px-[1.25rem] py-[0.875rem] text-heading-3 text-[#0D0F12]">
               010-0000-0000
             </div>
 
-            <p className="mt-[1rem] typography-body-2 text-[#4A5568]">
+            <p className="mt-[1rem] text-body-2 text-[#4A5568]">
               물건을 잃어버리셨나요? 위 번호로 연락주시면 분실물 등록 여부를 확인해드립니다.
             </p>
           </section>
@@ -139,7 +156,7 @@ export default function LostFound() {
           />
 
           <div>
-            <p className="typography-caption font-medium text-[#4A5568] px-[1rem] py-[0.625rem]">
+            <p className="text-caption font-medium text-[#4A5568] px-[1rem] py-[0.625rem]">
               습득 분실물 목록
             </p>
 
