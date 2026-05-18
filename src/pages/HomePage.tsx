@@ -79,7 +79,7 @@ function Home() {
                 </div>
 
                 <div className="flex flex-col gap-[0.75rem] mb-[2.25rem]">
-                    {booth.map((booth, index) => (
+                    {booth.map((booth) => (
                         <BoothCard
 
                             key={booth.boothNumber}

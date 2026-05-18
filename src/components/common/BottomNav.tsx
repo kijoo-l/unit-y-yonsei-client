@@ -1,4 +1,3 @@
-import { act } from "react";
 import { Link, matchPath, useLocation } from "react-router-dom";
 
 function BottomNav() {

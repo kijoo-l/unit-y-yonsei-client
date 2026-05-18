@@ -33,12 +33,6 @@ const LOCATION_CHIPS: Record<string, { id: string; label: string }[]> = {
   ],
 };
 
-const MAP_IMAGES: Record<string, string> = {
-  "527": "/booth/map-songdo.png",
-  "528": "/booth/map-sinchon.png",
-  "529": "/booth/map-sinchon.png",
-};
-
 const MOCK_BOOTHS = [
   {
     id: 1,
@@ -65,13 +59,11 @@ function BoothList() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeFilter, setActiveFilter] = useState("all");
   const [activeLocation, setActiveLocation] = useState("all");
-  const [isMapOpen, setIsMapOpen] = useState(false);
 
   function handleTabChange(tab: string) {
     setActiveTab(tab);
     setActiveLocation("all");
     setActiveFilter("all");
-    setIsMapOpen(false);
   }
 
   const locationChips = LOCATION_CHIPS[activeTab] ?? [];
