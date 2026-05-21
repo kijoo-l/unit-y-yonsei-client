@@ -1,8 +1,9 @@
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ServiceCard } from '../../components/service/ServiceCard';
 import TopBar from '../../components/common/TopBar';
 import BottomNav from '../../components/common/BottomNav';
-import chevronRight from '../../../public/svg/Chevron_Right_MD.svg'; // 공지사항 꺾쇠 아이콘
+import chevronRight from '../../../public/svg/Chevron_Right_MD.svg';
 
 
 // 연동 전 임시 Mock Data
@@ -43,7 +44,7 @@ export const InformationMainPage = () => {
         <section className="bg-white px-[16px] pt-[12px] pb-[12px]">
           <div className="flex items-center justify-between mb-[16px]">
             <h2 className="text-heading-2">공지사항</h2>
-            <button className="flex items-center text-body-1 text-[#1E53FF]">
+            <button className="flex items-center text-body-1 text-[#1E53FF]" onClick={() => navigate('/more/notice')}>
               전체보기
               <svg className="w-[16px] h-[16px] ml-[2px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
