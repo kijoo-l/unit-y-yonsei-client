@@ -16,11 +16,11 @@ export default function TabBar({ tabs, activeTab, onTabChange }: TabBarProps) {
         const isActive = activeTab === tab.id;
 
         return (
-<button
-  key={tab.id}
-  type="button"
-  onClick={() => onTabChange(tab.id)}
-  className={`
+          <button
+            key={tab.id}
+            type="button"
+            onClick={() => onTabChange(tab.id)}
+            className={`
     box-border
     flex
     flex-1
@@ -40,9 +40,9 @@ export default function TabBar({ tabs, activeTab, onTabChange }: TabBarProps) {
         : "border-b-[#EDEEF0] text-[#ACB1BA]"
     }
   `}
->
-  {tab.label}
-</button>
+          >
+            {tab.label}
+          </button>
         );
       })}
     </div>

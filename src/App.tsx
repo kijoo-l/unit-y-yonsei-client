@@ -3,7 +3,9 @@ import "./index.css";
 import Home from "./pages/HomePage";
 import BoothList from "./pages/booth/BoothList";
 import AvailableBoothListPage from "./pages/booth/reservation/AvailableBoothList";
-import BoothReservationDetailPage from "./pages/booth/reservation/BoothReservationDetailPage";
+import PerformanceListPage from "./pages/performance/PerformanceListPage";
+import PerformanceDetailPage from "./pages/performance/PerformanceDetailPage";
+import BoothDetailPage from "./pages/booth/BoothDetailPage";
 import { InformationMainPage } from './pages/more/InformationMainPage';
 import NoticePage from './pages/more/NoticePage';
 import NoticeDetailPage from './pages/more/NoticeDetailPage';
@@ -28,7 +30,12 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/booth" element={<BoothList />} />
             <Route path="/reservation" element={<AvailableBoothListPage />} />
-            <Route path="/booths/:boothNumber" element={<BoothReservationDetailPage />} />
+            <Route path="/performance" element={<PerformanceListPage />} />
+            <Route
+              path="/performance/:id"
+              element={<PerformanceDetailPage />}
+            />
+            <Route path="/booths/:boothNumber" element={<BoothDetailPage />} />
             <Route path="/more" element={<InformationMainPage />} />
             <Route path="/more/notice" element={<NoticePage />} />
             <Route path="/more/notice/:id" element={<NoticeDetailPage />} />

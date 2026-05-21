@@ -34,15 +34,9 @@ export default function MapAccordion({
         "
       >
         <div className="flex w-full items-center">
-          <img 
-            src="/map.svg"
-            alt="Map"
-            className="shrink-0"
-          />
+          <img src="/map.svg" alt="Map" className="shrink-0" />
 
-          <span className="text-body-2 ml-[8px]">
-            {title}
-          </span>
+          <span className="text-body-2 ml-[8px]">{title}</span>
         </div>
 
         <svg
@@ -53,29 +47,20 @@ export default function MapAccordion({
           fill="none"
           className={`shrink-0 ${isOpen ? "" : "rotate-180"}`}
         >
-          <path
-            d="M12 10L8 6L4 10"
-            stroke="#868D9A"
-            strokeWidth="1.2"
-          />
+          <path d="M12 10L8 6L4 10" stroke="#868D9A" strokeWidth="1.2" />
         </svg>
       </button>
 
       {isOpen && (
         <div
           className="
-            flex
-            h-[216px]
-            w-full
-            flex-col
-            items-start
-            justify-center
-            gap-[16px]
-            rounded-[14px]
-            border
-            border-[#EDEEF0]
-            bg-white
-          "
+      w-full
+      rounded-[14px]
+      border
+      border-[#EDEEF0]
+      bg-white
+      overflow-hidden
+    "
         >
           {children}
         </div>
