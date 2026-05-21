@@ -6,7 +6,6 @@ import AvailableBoothListPage from "./pages/booth/reservation/AvailableBoothList
 import PerformanceListPage from "./pages/performance/PerformanceListPage";
 import PerformanceDetailPage from "./pages/performance/PerformanceDetailPage";
 import BoothDetailPage from "./pages/booth/BoothDetailPage";
-import BoothReservationDetailPage from "./pages/booth/reservation/BoothReservationDetailPage";
 import { InformationMainPage } from './pages/more/InformationMainPage';
 import ReviewPage from './pages/more/ReviewPage';
 import ReviewSubmitPage from './pages/more/ReviewSubmitPage';
@@ -34,7 +33,7 @@ function App() {
               path="/performance/:id"
               element={<PerformanceDetailPage />}
             />
-            <Route path="/booths/:boothNumber" element={<BoothReservationDetailPage />} />
+            <Route path="/booths/:boothNumber" element={<BoothDetailPage />} />
             <Route path="/more" element={<InformationMainPage />} />
             <Route path="/more/review" element={<ReviewPage />} />
             <Route path="/more/review-submit" element={<ReviewSubmitPage />} />

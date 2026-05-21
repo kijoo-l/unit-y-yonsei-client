@@ -117,7 +117,7 @@ function PerformanceDetailPage() {
           {/* 셋리스트 타이틀 */}
           <div className="justify-start text-heading-3">셋리스트</div>
 
-          <div className="flex flex-col justify-start items-start gap-1.5">
+          <div className="flex flex-col justify-start w-full gap-1.5">
             {perf.setlist.map((song, index) => {
               const badgeStyles = [
                 { bg: "bg-[#E9EEFF]", text: "text-[#1E53FF]" },

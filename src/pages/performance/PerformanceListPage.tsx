@@ -119,9 +119,15 @@ function PerformanceListPage() {
               key={perf.id}
               className={`flex w-full flex-col py-4 border-l-[4px] ${
                 perf.isLive
-                  ? "border-[#7052FF] bg-gradient-to-r from-[#F1EEFF] to-[#FFECF6]"
+                  ? "bg-gradient-to-r from-[#F1EEFF] to-[#FFECF6]"
                   : "border-[#868D9A] bg-white"
               }`}
+
+              style={{
+                borderImage: perf.isLive 
+                  ? 'linear-gradient(180deg, #7052FF 0%, #FF40A5 100%) 1' 
+                  : 'none',
+              }}
             >
               <div className="flex flex-col gap-[8px] pl-[12px] pr-4">
                 <p className="text-[#4A5568] text-caption">{perf.time}</p>
