@@ -14,7 +14,7 @@ function TopBar({
   const navigate = useNavigate();
 
   return (
-    <header className="h-[3.625rem] bg-white flex items-center justify-between px-[1.5rem]">
+    <header className="h-[3.625rem] bg-white flex items-center justify-between px-[16px] py-[20px]">
       <div className="w-[1.5rem] h-[1.5rem] flex items-center justify-center">
         {showBackButton && (
           <button type="button" onClick={() => navigate(-1)}>
@@ -27,7 +27,7 @@ function TopBar({
         )}
       </div>
 
-      <p className="text-[1.25rem] font-bold">
+      <p className="text-heading-2">
         {title}
       </p>
 

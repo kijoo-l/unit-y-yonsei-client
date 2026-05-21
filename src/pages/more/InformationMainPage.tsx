@@ -24,6 +24,13 @@ const mockData = {
 export const InformationMainPage = () => {
   const navigate = useNavigate();
 
+  const serviceRoutes: Record<number, string> = {
+    1: '/more/lost-found',
+    2: '/more/barrier-free',
+    3: '/more/review',
+    4: '/more/makers',
+  };
+
   return (
     <div className="flex flex-col min-h-screen ">
       
@@ -87,7 +94,7 @@ export const InformationMainPage = () => {
                 key={service.id}
                 title={service.title}
                 description={service.description}
-                onClick={() => console.log(`${service.title} 페이지로 이동`)}
+                onClick={() => serviceRoutes[service.id] ? navigate(serviceRoutes[service.id]) : undefined}
               />
             ))}
           </div>

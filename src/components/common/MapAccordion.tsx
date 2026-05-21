@@ -14,7 +14,7 @@ export default function MapAccordion({
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
-    <div className="flex w-[358px] flex-col gap-[8px]">
+    <div className="flex w-full flex-col gap-[8px]">
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
