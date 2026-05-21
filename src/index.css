@@ -49,6 +49,52 @@ body {
   color: #1F242C;
 }
 
+.font-regular {
+  font-weight: 400;
+}
+
+.typography-heading-2 {
+  font-size: var(--text-heading-2);
+  line-height: var(--text-heading-2--line-height);
+  font-weight: var(--text-heading-2--font-weight);
+  letter-spacing: var(--text-heading-2--letter-spacing);
+}
+
+.typography-heading-3 {
+  font-size: var(--text-heading-3);
+  line-height: var(--text-heading-3--line-height);
+  font-weight: var(--text-heading-3--font-weight);
+  letter-spacing: var(--text-heading-3--letter-spacing);
+}
+
+.typography-body-1 {
+  font-size: var(--text-body-1);
+  line-height: var(--text-body-1--line-height);
+  font-weight: var(--text-body-1--font-weight);
+  letter-spacing: var(--text-body-1--letter-spacing);
+}
+
+.typography-body-2 {
+  font-size: var(--text-body-2);
+  line-height: var(--text-body-2--line-height);
+  font-weight: var(--text-body-2--font-weight);
+  letter-spacing: var(--text-body-2--letter-spacing);
+}
+
+.typography-caption {
+  font-size: var(--text-caption);
+  line-height: var(--text-caption--line-height);
+  font-weight: var(--text-caption--font-weight);
+  letter-spacing: var(--text-caption--letter-spacing);
+}
+
+.typography-label {
+  font-size: var(--text-label);
+  line-height: var(--text-label--line-height);
+  font-weight: var(--text-label--font-weight);
+  letter-spacing: var(--text-label--letter-spacing);
+}
+
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;

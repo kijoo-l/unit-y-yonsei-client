@@ -1,3 +1,10 @@
+export const JellyU3 = () => (
+  <img
+    src="/public/performance/jellyu-pose-3.svg"
+    alt="젤리유 포즈 3"
+    className="w-[58px] h-[53px] shrink-0 aspect-[58/53]"
+  />
+);
 type PerformanceCardProps = {
   title: string;
   time: string;
@@ -21,20 +28,20 @@ function PerformanceCard({
           : "bg-[#EDEEF0]"
       }`}
     >
-      <div className= {`flex overflow-hidden rounded-[0.82rem] ${
-        isLive
-        ? "bg-gradient-to-r from-[#F1EEFF] to-[#FFECF6]"
-        : "bg-white"
-      }`}
-      
+      <div
+        className={`flex overflow-hidden rounded-[0.82rem] ${
+          isLive ? "bg-gradient-to-r from-[#F1EEFF] to-[#FFECF6]" : "bg-white"
+        }`}
       >
-        <div className={`w-[5rem] shrink-0 ${
-        isLive
-          ? "bg-white"
-          : "bg-gradient-to-r from-[#F1EEFF] to-[#FFECF6] p-[0.0625rem]"
-      }`}
-        
-        />
+        <div
+          className={`flex w-[5rem] shrink-0 items-center justify-center ${
+            isLive
+              ? "bg-white"
+              : "bg-gradient-to-r from-[#F1EEFF] to-[#FFECF6] p-[0.0625rem]"
+          }`}
+        >
+          <JellyU3 />
+        </div>
 
         <div className="flex-1 px-[0.75rem] py-[0.75rem]">
           <div className="flex items-center gap-[0.5rem]">
@@ -44,9 +51,7 @@ function PerformanceCard({
               </span>
             )}
 
-            <p className="text-body-1">
-              {title}
-            </p>
+            <p className="text-body-1">{title}</p>
           </div>
 
           <p className="mt-[0.25rem] text-caption text-[#4A5568]">

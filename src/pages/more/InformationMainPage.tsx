@@ -1,8 +1,9 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ServiceCard } from '../../components/service/ServiceCard';
-// 💡 팀원분이 만드신 공통 컴포넌트 불러오기 (경로나 이름은 실제 폴더 구조에 맞게 수정해 주세요!)
-import TopBar from '../../components/common/TopBar'; 
+import TopBar from '../../components/common/TopBar';
 import BottomNav from '../../components/common/BottomNav';
-import chevronRight from '../../../public/svg/Chevron_Right_MD.svg'; // 공지사항 꺾쇠 아이콘
+import chevronRight from '../../../public/svg/Chevron_Right_MD.svg';
 
 
 // 연동 전 임시 Mock Data
@@ -21,6 +22,15 @@ const mockData = {
 };
 
 export const InformationMainPage = () => {
+  const navigate = useNavigate();
+
+  const serviceRoutes: Record<number, string> = {
+    1: '/more/lost-found',
+    2: '/more/barrier-free',
+    3: '/more/review',
+    4: '/more/makers',
+  };
+
   return (
     <div className="flex flex-col min-h-screen ">
       
@@ -34,7 +44,7 @@ export const InformationMainPage = () => {
         <section className="bg-white px-[16px] pt-[12px] pb-[12px]">
           <div className="flex items-center justify-between mb-[16px]">
             <h2 className="text-heading-2">공지사항</h2>
-            <button className="flex items-center text-body-1 text-[#1E53FF]">
+            <button className="flex items-center text-body-1 text-[#1E53FF]" onClick={() => navigate('/more/notice')}>
               전체보기
               <svg className="w-[16px] h-[16px] ml-[2px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -84,7 +94,7 @@ export const InformationMainPage = () => {
                 key={service.id}
                 title={service.title}
                 description={service.description}
-                onClick={() => console.log(`${service.title} 페이지로 이동`)}
+                onClick={() => serviceRoutes[service.id] ? navigate(serviceRoutes[service.id]) : undefined}
               />
             ))}
           </div>
