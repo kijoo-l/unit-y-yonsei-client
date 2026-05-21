@@ -69,7 +69,7 @@ export default function NoticeDetailPage() {
         </section>
 
         {/* 배너 슬라이더 */}
-        <section className="h-[488px] pt-[24px] bg-white">
+        <section className="h-[496px] mt-[24px] bg-white">
           <div
             className="w-full h-full overflow-hidden relative bg-[#EDEEF0]"
             onTouchStart={handleTouchStart}
